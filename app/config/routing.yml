@@ -1,0 +1,9 @@
+cscc_ui:
+    resource: "@CsccUiBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+cscc_data:
+    resource: "@CsccDataBundle/Controller/"
+    type:     annotation
+    prefix:   /
