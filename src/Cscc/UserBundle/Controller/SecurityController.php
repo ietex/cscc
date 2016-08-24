@@ -22,14 +22,13 @@ class SecurityController extends Controller
      */
     public function loginAction(Request $request)
     {
-
         $authenticationUtils = $this->get('security.authentication_utils');
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('UiBundle:Security:login.simple.html.twig',[
+        return $this->render('UiBundle:Security:login.html.twig',[
             'title'=>'Login',
-            'last_username'=>$lastUsername,
+            'username'=>$lastUsername,
             'error'=>$error,
         ]);
 
@@ -41,10 +40,7 @@ class SecurityController extends Controller
      */
     public function logoutAction()
     {
-        return new Response();
     }
-
-
 
 
 }

@@ -48,6 +48,11 @@ security:
                 path:   /logout
                 target: /
 
+            remember_me:
+                secret:   '%secret%'
+                lifetime: 604800
+                path:     /
+
     access_control:
         - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: ROLE_USER }

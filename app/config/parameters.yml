@@ -11,3 +11,5 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: ThisTokenIsNotSoSecretChangeIt
+    node: node
+    locale: zh_CN

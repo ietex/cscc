@@ -10,6 +10,7 @@
     {% block themeGlobalStylesheet %}{% endblock %}
     {% block themeLayoutStylesheet %}{% endblock %}
     {% block pageStylesheet %}{% endblock %}
+
 </head>
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
 
@@ -19,12 +20,12 @@
 
         <div class="page-logo">
             <a href="index.html">
-                <img src="{{ asset('bundles/manageweb/layout/img/logo.png') }}" alt="logo" class="logo-default" /> </a>
+                <img src="{{ asset('bundles/Ui/layout/img/logo.png') }}" alt="logo" class="logo-default" /> </a>
             <div class="menu-toggler sidebar-toggler"> </div>
         </div>
         <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
         <div class="top-menu">
-            {% include 'ManageWebBundle:Manage:tinc.html.twig' %}
+            {% include 'UiBundle:Common:tinc.html.twig' %}
         </div>
     </div>
 </div>
@@ -34,7 +35,7 @@
 <div class="page-container">
     <div class="page-sidebar-wrapper">
         <div class="page-sidebar navbar-collapse collapse">
-            {% include 'ManageWebBundle:Manage:linc.html.twig' %}
+            {% include 'UiBundle:Common:linc.html.twig' %}
         </div>
     </div>
     <div class="page-content-wrapper">
@@ -47,8 +48,8 @@
 {% block footer %}{% endblock %}
 
 <!--[if lt IE 9]>
-<script src="{{ asset('bundles/manageweb/global/plugins/respond.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('bundles/manageweb/global/plugins/excanvas.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/Ui/global/plugins/respond.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/Ui/global/plugins/excanvas.min.js') }}" type="text/javascript"></script>
 <![endif]-->
 
 {% block rawJavascript %}{% endblock %}

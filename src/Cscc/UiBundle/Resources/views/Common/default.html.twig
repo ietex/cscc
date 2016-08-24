@@ -1,13 +1,13 @@
-{% extends 'ManageWebBundle:Manage:base.html.twig' %}
+{% extends 'UiBundle:Common:base.html.twig' %}
 
 {% block globalMandatoryStylesheet %}
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     {% stylesheets
-        'bundles/manageweb/global/plugins/font-awesome/css/font-awesome.min.css'
-        'bundles/manageweb/global/plugins/simple-line-icons/simple-line-icons.min.css'
-        'bundles/manageweb/global/plugins/bootstrap/css/bootstrap.min.css'
-        'bundles/manageweb/global/plugins/uniform/css/uniform.default.css'
-        'bundles/manageweb/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
+        'bundles/Ui/global/plugins/font-awesome/css/font-awesome.min.css'
+        'bundles/Ui/global/plugins/simple-line-icons/simple-line-icons.min.css'
+        'bundles/Ui/global/plugins/bootstrap/css/bootstrap.min.css'
+        'bundles/Ui/global/plugins/uniform/css/uniform.default.css'
+        'bundles/Ui/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
     filter="cssrewrite"
     %}
 <link rel="stylesheet" href="{{ asset_url }}" />
@@ -16,8 +16,8 @@
 
 {% block themeGlobalStylesheet %}
     {% stylesheets
-        'bundles/manageweb/global/css/components.min.css'
-        'bundles/manageweb/global/css/plugins.min.css'
+        'bundles/Ui/global/css/components.min.css'
+        'bundles/Ui/global/css/plugins.min.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -26,9 +26,9 @@
 
 {% block themeLayoutStylesheet %}
     {% stylesheets
-        'bundles/manageweb/layout/css/layout.min.css'
-        'bundles/manageweb/layout/css/themes/darkblue.min.css'
-        'bundles/manageweb/layout/css/custom.min.css'
+        'bundles/Ui/layout/css/layout.min.css'
+        'bundles/Ui/layout/css/themes/darkblue.min.css'
+        'bundles/Ui/layout/css/custom.min.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -37,14 +37,14 @@
 
 {% block corePluginsJavascript %}
     {% javascripts
-    'bundles/manageweb/global/scripts/jquery.min.js'
-    'bundles/manageweb/global/plugins/bootstrap/js/bootstrap.min.js'
-    'bundles/manageweb/global/plugins/js.cookie.min.js'
-    'bundles/manageweb/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'
-    'bundles/manageweb/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'
-    'bundles/manageweb/global/plugins/jquery.blockui.min.js'
-    'bundles/manageweb/global/plugins/uniform/jquery.uniform.min.js'
-    'bundles/manageweb/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
+    'bundles/Ui/global/scripts/jquery.min.js'
+    'bundles/Ui/global/plugins/bootstrap/js/bootstrap.min.js'
+    'bundles/Ui/global/plugins/js.cookie.min.js'
+    'bundles/Ui/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'
+    'bundles/Ui/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'
+    'bundles/Ui/global/plugins/jquery.blockui.min.js'
+    'bundles/Ui/global/plugins/uniform/jquery.uniform.min.js'
+    'bundles/Ui/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -52,7 +52,7 @@
 
 {% block themeGlobalJavascript %}
     {% javascripts
-    'bundles/manageweb/global/scripts/app.js'
+    'bundles/Ui/global/scripts/app.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -60,9 +60,9 @@
 
 {% block themeLayoutJavascript %}
     {% javascripts
-    'bundles/manageweb/layout/scripts/layout.min.js'
-    'bundles/manageweb/layout/scripts/demo.min.js'
-    'bundles/manageweb/layout/scripts/quick-sidebar.min.js'
+    'bundles/Ui/layout/scripts/layout.min.js'
+    'bundles/Ui/layout/scripts/demo.min.js'
+    'bundles/Ui/layout/scripts/quick-sidebar.min.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}

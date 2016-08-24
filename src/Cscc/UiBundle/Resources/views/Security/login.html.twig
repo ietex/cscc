@@ -1,15 +1,15 @@
-{% extends 'ManageWebBundle:Common:prime.html.twig' %}
+{% extends 'UiBundle:Common:prime.html.twig' %}
 
 {% block globalMandatoryStylesheet %}
 {#
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
 #}
     {% stylesheets
-        'bundles/manageweb/global/plugins/font-awesome/css/font-awesome.min.css'
-        'bundles/manageweb/global/plugins/simple-line-icons/simple-line-icons.min.css'
-        'bundles/manageweb/global/plugins/bootstrap/css/bootstrap.min.css'
-        'bundles/manageweb/global/plugins/uniform/css/uniform.default.css'
-        'bundles/manageweb/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
+        'bundles/Ui/global/plugins/font-awesome/css/font-awesome.min.css'
+        'bundles/Ui/global/plugins/simple-line-icons/simple-line-icons.min.css'
+        'bundles/Ui/global/plugins/bootstrap/css/bootstrap.min.css'
+        'bundles/Ui/global/plugins/uniform/css/uniform.default.css'
+        'bundles/Ui/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
     filter="cssrewrite"
     %}
 <link rel="stylesheet" href="{{ asset_url }}" />
@@ -18,8 +18,8 @@
 
 {% block themeGlobalStylesheet %}
     {% stylesheets
-        'bundles/manageweb/global/css/components.min.css'
-        'bundles/manageweb/global/css/plugins.min.css'
+        'bundles/Ui/global/css/components.min.css'
+        'bundles/Ui/global/css/plugins.min.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -28,9 +28,9 @@
 
 {% block themeLayoutStylesheet %}
     {% stylesheets
-        'bundles/manageweb/layout/css/layout.min.css'
-        'bundles/manageweb/layout/css/themes/darkblue.min.css'
-        'bundles/manageweb/layout/css/custom.min.css'
+        'bundles/Ui/layout/css/layout.min.css'
+        'bundles/Ui/layout/css/themes/darkblue.min.css'
+        'bundles/Ui/layout/css/custom.min.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -39,8 +39,8 @@
 
 {% block pagePluginStylesheet %}
     {% stylesheets
-	    'bundles/manageweb/global/plugins/select2/css/select2.min.css'
-	    'bundles/manageweb/global/plugins/select2/css/select2-bootstrap.min.css'
+	    'bundles/Ui/global/plugins/select2/css/select2.min.css'
+	    'bundles/Ui/global/plugins/select2/css/select2-bootstrap.min.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -49,7 +49,7 @@
 
 {% block pageStylesheet %}
 	{% stylesheets
-    	'bundles/manageweb/pages/css/login-4.min.css'
+    	'bundles/Ui/pages/css/login-4.min.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -66,167 +66,55 @@
     <!-- BEGIN LOGO -->
     <div class="logo">
         <a href="index.html">
-            <img src="{{ asset('bundles/manageweb/pages/img/logo-big.png') }}" alt="" /> </a>
+            <img src="{{ asset('bundles/Ui/pages/img/logo-big.png') }}" alt="" /> </a>
     </div>
     <!-- END LOGO -->
     <!-- BEGIN LOGIN -->
     <div class="content">
         <!-- BEGIN LOGIN FORM -->
-        <form class="login-form" action="{{ path('manage_login') }}" method="post">
-            <h3 class="form-title">Login to your account</h3>
+        <form class="login-form" action="{{ path('login') }}" method="post">
+            <h3 class="form-title">{{ 'Login to your account'|trans }}</h3>
             <div class="alert alert-danger display-hide">
                 <button class="close" data-close="alert"></button>
                 <span> Enter any username and password. </span>
             </div>
             <div class="form-group">
                 <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-                <label class="control-label visible-ie8 visible-ie9">Username</label>
+                <label class="control-label visible-ie8 visible-ie9">{{ 'Username'|trans }}</label>
                 <div class="input-icon">
                     <i class="fa fa-user"></i>
-                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="_username" value="{{ username }}" /> </div>
+                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="{{ 'Username'|trans }}" name="_username" value="{{ username }}" /> </div>
             </div>
             <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">Password</label>
+                <label class="control-label visible-ie8 visible-ie9">{{ 'Password'|trans }}</label>
                 <div class="input-icon">
                     <i class="fa fa-lock"></i>
-                    <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="_password" /> </div>
+                    <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="{{ 'Password'|trans }}" name="_password" /> </div>
             </div>
             <div class="form-actions">
                 <label class="checkbox">
-                    <input type="checkbox" id="remember_me" name="_remember_me" /> Remember me </label>
+                    <input type="checkbox" id="remember_me" name="_remember_me" /> {{ 'Remember me' | trans }} </label>
                 <input type="hidden" name="csrf_security_token"
                        value="{{ csrf_token('login_csrf_token') }}"
                 >
-                <button type="submit" class="btn green pull-right"> Login </button>
+                <button type="submit" class="btn green pull-right"> {{ 'Login'|trans }} </button>
             </div>
-            <div class="login-options">
-                <h4>Or login with</h4>
-                <ul class="social-icons">
-                    <li>
-                        <a class="facebook" data-original-title="facebook" href="javascript:;"> </a>
-                    </li>
-                    <li>
-                        <a class="twitter" data-original-title="Twitter" href="javascript:;"> </a>
-                    </li>
-                    <li>
-                        <a class="googleplus" data-original-title="Goole Plus" href="javascript:;"> </a>
-                    </li>
-                    <li>
-                        <a class="linkedin" data-original-title="Linkedin" href="javascript:;"> </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="forget-password">
-                <h4>Forgot your password ?</h4>
-                <p> no worries, click
-                    <a href="javascript:;" id="forget-password"> here </a> to reset your password. </p>
-            </div>
-            <div class="create-account">
-                <p> Don't have an account yet ?&nbsp;
-                    <a href="javascript:;" id="register-btn"> Create an account </a>
-                </p>
-            </div>
+
         </form>
         <!-- END LOGIN FORM -->
-        <!-- BEGIN FORGOT PASSWORD FORM -->
-        <form class="forget-form" action="index.html" method="post">
-            <h3>Forget Password ?</h3>
-            <p> Enter your e-mail address below to reset your password. </p>
-            <div class="form-group">
-                <div class="input-icon">
-                    <i class="fa fa-envelope"></i>
-                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" /> </div>
-            </div>
-            <div class="form-actions">
-                <button type="button" id="back-btn" class="btn red btn-outline">Back </button>
-                <button type="submit" class="btn green pull-right"> Submit </button>
-            </div>
-        </form>
-        <!-- END FORGOT PASSWORD FORM -->
-        <!-- BEGIN REGISTRATION FORM -->
-        <form class="register-form" action="index.html" method="post">
-            <h3>Sign Up</h3>
-            <p> Enter your personal details below: </p>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">Full Name</label>
-                <div class="input-icon">
-                    <i class="fa fa-font"></i>
-                    <input class="form-control placeholder-no-fix" type="text" placeholder="Full Name" name="fullname" /> </div>
-            </div>
-            <div class="form-group">
-                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-                <label class="control-label visible-ie8 visible-ie9">Email</label>
-                <div class="input-icon">
-                    <i class="fa fa-envelope"></i>
-                    <input class="form-control placeholder-no-fix" type="text" placeholder="Email" name="email" /> </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">Address</label>
-                <div class="input-icon">
-                    <i class="fa fa-check"></i>
-                    <input class="form-control placeholder-no-fix" type="text" placeholder="Address" name="address" /> </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">City/Town</label>
-                <div class="input-icon">
-                    <i class="fa fa-location-arrow"></i>
-                    <input class="form-control placeholder-no-fix" type="text" placeholder="City/Town" name="city" /> </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">Country</label>
-                <select name="country" id="country_list" class="select2 form-control">
-                    <option value=""></option>
-                    <option value="AF">Afghanistan</option>
-                    <option value="AL">Albania</option>
-                </select>
-            </div>
-            <p> Enter your account details below: </p>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">Username</label>
-                <div class="input-icon">
-                    <i class="fa fa-user"></i>
-                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" /> </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">Password</label>
-                <div class="input-icon">
-                    <i class="fa fa-lock"></i>
-                    <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password" /> </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
-                <div class="controls">
-                    <div class="input-icon">
-                        <i class="fa fa-check"></i>
-                        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword" /> </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>
-                    <input type="checkbox" name="tnc" /> I agree to the
-                    <a href="javascript:;"> Terms of Service </a> and
-                    <a href="javascript:;"> Privacy Policy </a>
-                </label>
-                <div id="register_tnc_error"> </div>
-            </div>
-            <div class="form-actions">
-                <button id="register-back-btn" type="button" class="btn red btn-outline"> Back </button>
-                <button type="submit" id="register-submit-btn" class="btn green pull-right"> Sign Up </button>
-            </div>
-        </form>
-        <!-- END REGISTRATION FORM -->
+
     </div>
 
 {% endblock %}
 
 {% block footer %}
-<div class="copyright"> 2016 &copy; ICSOC - Admin Dashboard Template. </div>
+<div class="copyright">Copyright &copy; 2016 ICSOC. All Rights Reserved. 中通天鸿 版权所有</div>
 {% endblock %}
 
 
 {% block rawJavascript %}
 <script type="text/javascript">
-    var _assetsPath = "{{ asset('bundles/manageweb/') }}";
+    var _assetsPath = "{{ asset('bundles/Ui/') }}";
 </script>
 
 {% endblock %}
@@ -234,14 +122,14 @@
 
 {% block corePluginsJavascript %}
     {% javascripts
-    'bundles/manageweb/global/scripts/jquery.min.js'
-    'bundles/manageweb/global/plugins/bootstrap/js/bootstrap.min.js'
-    'bundles/manageweb/global/plugins/js.cookie.min.js'
-    'bundles/manageweb/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'
-    'bundles/manageweb/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'
-    'bundles/manageweb/global/plugins/jquery.blockui.min.js'
-    'bundles/manageweb/global/plugins/uniform/jquery.uniform.min.js'
-    'bundles/manageweb/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
+    'bundles/Ui/global/scripts/jquery.min.js'
+    'bundles/Ui/global/plugins/bootstrap/js/bootstrap.min.js'
+    'bundles/Ui/global/plugins/js.cookie.min.js'
+    'bundles/Ui/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'
+    'bundles/Ui/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'
+    'bundles/Ui/global/plugins/jquery.blockui.min.js'
+    'bundles/Ui/global/plugins/uniform/jquery.uniform.min.js'
+    'bundles/Ui/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -250,10 +138,10 @@
 
 {% block pagePluginsJavascript %}
     {% javascripts
-    'bundles/manageweb/global/plugins/jquery-validation/js/jquery.validate.min.js'
-    'bundles/manageweb/global/plugins/jquery-validation/js/additional-methods.min.js'
-    'bundles/manageweb/global/plugins/select2/js/select2.full.min.js'
-    'bundles/manageweb/global/plugins/backstretch/jquery.backstretch.min.js'
+    'bundles/Ui/global/plugins/jquery-validation/js/jquery.validate.min.js'
+    'bundles/Ui/global/plugins/jquery-validation/js/additional-methods.min.js'
+    'bundles/Ui/global/plugins/select2/js/select2.full.min.js'
+    'bundles/Ui/global/plugins/backstretch/jquery.backstretch.min.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -261,7 +149,7 @@
 
 {% block themeGlobalJavascript %}
     {% javascripts
-    'bundles/manageweb/global/scripts/app.js'
+    'bundles/Ui/global/scripts/app.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -269,7 +157,7 @@
 
 {% block pageLevelJavascript %}
     {% javascripts
-    'bundles/manageweb/pages/scripts/login-4.js'
+    'bundles/Ui/pages/scripts/login-4.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
