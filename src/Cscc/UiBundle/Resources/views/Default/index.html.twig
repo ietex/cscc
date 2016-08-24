@@ -1,1 +1,7 @@
-Hello World!!!
+{% extends 'UiBundle:Common:default.html.twig' %}
+{% block rawJavascript %}
+    <script type="text/javascript">
+        var _assetsPath = "{{ asset('bundles/Ui/') }}";
+    </script>
+
+{% endblock %}
