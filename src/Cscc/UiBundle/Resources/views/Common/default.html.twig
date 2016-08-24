@@ -3,11 +3,11 @@
 {% block globalMandatoryStylesheet %}
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     {% stylesheets
-        'bundles/Ui/global/plugins/font-awesome/css/font-awesome.min.css'
-        'bundles/Ui/global/plugins/simple-line-icons/simple-line-icons.min.css'
-        'bundles/Ui/global/plugins/bootstrap/css/bootstrap.min.css'
+        'bundles/Ui/global/plugins/font-awesome/css/font-awesome.css'
+        'bundles/Ui/global/plugins/simple-line-icons/simple-line-icons.css'
+        'bundles/Ui/global/plugins/bootstrap/css/bootstrap.css'
         'bundles/Ui/global/plugins/uniform/css/uniform.default.css'
-        'bundles/Ui/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
+        'bundles/Ui/global/plugins/bootstrap-switch/css/bootstrap-switch.css'
     filter="cssrewrite"
     %}
 <link rel="stylesheet" href="{{ asset_url }}" />
@@ -16,8 +16,8 @@
 
 {% block themeGlobalStylesheet %}
     {% stylesheets
-        'bundles/Ui/global/css/components.min.css'
-        'bundles/Ui/global/css/plugins.min.css'
+        'bundles/Ui/global/css/components.css'
+        'bundles/Ui/global/css/plugins.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -26,9 +26,9 @@
 
 {% block themeLayoutStylesheet %}
     {% stylesheets
-        'bundles/Ui/layout/css/layout.min.css'
-        'bundles/Ui/layout/css/themes/darkblue.min.css'
-        'bundles/Ui/layout/css/custom.min.css'
+        'bundles/Ui/layout/css/layout.css'
+        'bundles/Ui/layout/css/themes/darkblue.css'
+        'bundles/Ui/layout/css/custom.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -38,13 +38,13 @@
 {% block corePluginsJavascript %}
     {% javascripts
     'bundles/Ui/global/scripts/jquery.min.js'
-    'bundles/Ui/global/plugins/bootstrap/js/bootstrap.min.js'
-    'bundles/Ui/global/plugins/js.cookie.min.js'
-    'bundles/Ui/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'
-    'bundles/Ui/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'
-    'bundles/Ui/global/plugins/jquery.blockui.min.js'
-    'bundles/Ui/global/plugins/uniform/jquery.uniform.min.js'
-    'bundles/Ui/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
+    'bundles/Ui/global/plugins/bootstrap/js/bootstrap.js'
+    'bundles/Ui/global/plugins/js.cookie.js'
+    'bundles/Ui/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js'
+    'bundles/Ui/global/plugins/jquery-slimscroll/jquery.slimscroll.js'
+    'bundles/Ui/global/plugins/jquery.blockui.js'
+    'bundles/Ui/global/plugins/uniform/jquery.uniform.js'
+    'bundles/Ui/global/plugins/bootstrap-switch/js/bootstrap-switch.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -60,9 +60,9 @@
 
 {% block themeLayoutJavascript %}
     {% javascripts
-    'bundles/Ui/layout/scripts/layout.min.js'
-    'bundles/Ui/layout/scripts/demo.min.js'
-    'bundles/Ui/layout/scripts/quick-sidebar.min.js'
+    'bundles/Ui/layout/scripts/layout.js'
+    'bundles/Ui/layout/scripts/demo.js'
+    'bundles/Ui/layout/scripts/quick-sidebar.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
