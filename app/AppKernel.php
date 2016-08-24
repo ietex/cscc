@@ -16,8 +16,9 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Cscc\DataBundle\CsccDataBundle(),
-            new Cscc\UiBundle\CsccUiBundle(),
+            new Cscc\DataBundle\DataBundle(),
+            new Cscc\UiBundle\UiBundle(),
+            new Cscc\UserBundle\UserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

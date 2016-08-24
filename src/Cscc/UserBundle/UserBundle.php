@@ -1,9 +1,9 @@
 <?php
 
-namespace Cscc\UiBundle;
+namespace Cscc\UserBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class CsccUiBundle extends Bundle
+class UserBundle extends Bundle
 {
 }

@@ -1,0 +1,4 @@
+services:
+#    cscc_user.example:
+#        class: Cscc\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

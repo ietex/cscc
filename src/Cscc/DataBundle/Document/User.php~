@@ -1,0 +1,35 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: wangqi
+ * Date: 2016/8/22
+ * Time: 14:55
+ */
+namespace Cscc\DataBundle\Document;
+
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+
+/**
+ * @MongoDB\Document(repositoryClass="Cscc\DataBundle\Repository\UserRepository")
+ */
+class User
+{
+    /**
+     * @MongoDB\Id
+     */
+    protected $id;
+
+    /**
+     * @MongoDB\Field(type="int")
+     */
+    protected $jn;
+
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $pwd;
+
+
+
+
+}
