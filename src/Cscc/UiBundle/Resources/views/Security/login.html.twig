@@ -58,10 +58,6 @@
 
 {% block bodyPartOne %}
 <body class=" login">
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
-
 
     <!-- BEGIN LOGO -->
     <div class="logo">
@@ -99,6 +95,12 @@
                 >
                 <button type="submit" class="btn green pull-right"> {{ 'Login'|trans }} </button>
             </div>
+
+            {% if error %}
+            <div class="forget-password">
+                <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+            </div>
+            {% endif %}
 
         </form>
         <!-- END LOGIN FORM -->

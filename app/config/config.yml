@@ -54,10 +54,10 @@ assetic:
     assets:
         js_layout:
            inputs:
-             - 'bundles/Ui/layout/scripts/layout.min.js'
+             - 'bundles/Ui/layout/scripts/layout.js'
         js_jquery:
            inputs:
-             - '@UiBundle/Resources/public/global/scripts/jquery.min.js'
+             - '@UiBundle/Resources/public/global/scripts/jquery.js'
 
 # Doctrine Configuration
 doctrine:
