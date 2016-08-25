@@ -5,11 +5,11 @@
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
 #}
     {% stylesheets
-        'bundles/Ui/global/plugins/font-awesome/css/font-awesome.min.css'
-        'bundles/Ui/global/plugins/simple-line-icons/simple-line-icons.min.css'
-        'bundles/Ui/global/plugins/bootstrap/css/bootstrap.min.css'
+        'bundles/Ui/global/plugins/font-awesome/css/font-awesome.css'
+        'bundles/Ui/global/plugins/simple-line-icons/simple-line-icons.css'
+        'bundles/Ui/global/plugins/bootstrap/css/bootstrap.css'
         'bundles/Ui/global/plugins/uniform/css/uniform.default.css'
-        'bundles/Ui/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
+        'bundles/Ui/global/plugins/bootstrap-switch/css/bootstrap-switch.css'
     filter="cssrewrite"
     %}
 <link rel="stylesheet" href="{{ asset_url }}" />
@@ -18,8 +18,8 @@
 
 {% block themeGlobalStylesheet %}
     {% stylesheets
-        'bundles/Ui/global/css/components.min.css'
-        'bundles/Ui/global/css/plugins.min.css'
+        'bundles/Ui/global/css/components.css'
+        'bundles/Ui/global/css/plugins.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -28,9 +28,9 @@
 
 {% block themeLayoutStylesheet %}
     {% stylesheets
-        'bundles/Ui/layout/css/layout.min.css'
-        'bundles/Ui/layout/css/themes/darkblue.min.css'
-        'bundles/Ui/layout/css/custom.min.css'
+        'bundles/Ui/layout/css/layout.css'
+        'bundles/Ui/layout/css/themes/darkblue.css'
+        'bundles/Ui/layout/css/custom.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -39,7 +39,7 @@
 
 {% block pagePluginStylesheet %}
     {% stylesheets
-	    'bundles/Ui/global/plugins/select2/css/select2.min.css'
+	    'bundles/Ui/global/plugins/select2/css/select2.css'
 	    'bundles/Ui/global/plugins/select2/css/select2-bootstrap.min.css'
     filter="cssrewrite"
     %}
@@ -49,7 +49,7 @@
 
 {% block pageStylesheet %}
 	{% stylesheets
-    	'bundles/Ui/pages/css/login-4.min.css'
+    	'bundles/Ui/pages/css/login-4.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -124,14 +124,14 @@
 
 {% block corePluginsJavascript %}
     {% javascripts
-    'bundles/Ui/global/scripts/jquery.min.js'
-    'bundles/Ui/global/plugins/bootstrap/js/bootstrap.min.js'
+    'bundles/Ui/global/scripts/jquery.js'
+    'bundles/Ui/global/plugins/bootstrap/js/bootstrap.js'
     'bundles/Ui/global/plugins/js.cookie.min.js'
-    'bundles/Ui/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'
-    'bundles/Ui/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'
+    'bundles/Ui/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js'
+    'bundles/Ui/global/plugins/jquery-slimscroll/jquery.slimscroll.js'
     'bundles/Ui/global/plugins/jquery.blockui.min.js'
-    'bundles/Ui/global/plugins/uniform/jquery.uniform.min.js'
-    'bundles/Ui/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
+    'bundles/Ui/global/plugins/uniform/jquery.uniform.js'
+    'bundles/Ui/global/plugins/bootstrap-switch/js/bootstrap-switch.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -140,10 +140,10 @@
 
 {% block pagePluginsJavascript %}
     {% javascripts
-    'bundles/Ui/global/plugins/jquery-validation/js/jquery.validate.min.js'
-    'bundles/Ui/global/plugins/jquery-validation/js/additional-methods.min.js'
-    'bundles/Ui/global/plugins/select2/js/select2.full.min.js'
-    'bundles/Ui/global/plugins/backstretch/jquery.backstretch.min.js'
+    'bundles/Ui/global/plugins/jquery-validation/js/jquery.validate.js'
+    'bundles/Ui/global/plugins/jquery-validation/js/additional-methods.js'
+    'bundles/Ui/global/plugins/select2/js/select2.full.js'
+    'bundles/Ui/global/plugins/backstretch/jquery.backstretch.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
