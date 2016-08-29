@@ -79,9 +79,13 @@
 </div>
 {% endblock %}
 
-
-
-
+{% block pageLevelJavascript %}
+    {% javascripts
+    'bundles/Ui/pages/scripts/tel.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
 
 
 
