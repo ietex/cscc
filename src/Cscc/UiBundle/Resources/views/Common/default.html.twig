@@ -29,6 +29,7 @@
         'bundles/Ui/layout/css/layout.css'
         'bundles/Ui/layout/css/themes/darkblue.css'
         'bundles/Ui/layout/css/custom.css'
+        'bundles/Ui/layout/css/contabs.css'
     filter="cssrewrite"
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -50,6 +51,17 @@
     {% endjavascripts %}
 {% endblock %}
 
+{% block pagePluginsJavascript %}
+    {#
+    {% javascripts
+        'bundles/Ui/global/plugins/layer/layer.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    #}
+    <script type="text/javascript" src="bundles/Ui/global/plugins/layer/layer.js"></script>
+{% endblock %}
+
 {% block themeGlobalJavascript %}
     {% javascripts
     'bundles/Ui/global/scripts/app.js'
@@ -63,6 +75,7 @@
     'bundles/Ui/layout/scripts/layout.js'
     'bundles/Ui/layout/scripts/demo.js'
     'bundles/Ui/layout/scripts/quick-sidebar.js'
+    'bundles/Ui/layout/scripts/contabs.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -82,9 +95,11 @@
 {% block pageLevelJavascript %}
     {% javascripts
     'bundles/Ui/pages/scripts/tel.js'
+    'bundles/Ui/pages/scripts/phone.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
+
 {% endblock %}
 
 

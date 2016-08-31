@@ -4,29 +4,28 @@
 
 var Tel = function () {
 
-    
+    function telClass(){
+        this.isCalling=false;
+        this.status=1;
 
+        this.callOut=function(phoneNum){
 
-    var handleLogin = function () {
+        }
+
 
     }
 
+    var telObj=new telClass();
+
 
     return {
-        init: function () {
-            handleLogin();
-        }
+        callOut: telObj.callOut,
+        isCalling: telObj.isCalling,
+
     };
 }();
 
 
-
-
-
-jQuery(document).ready(function() {
-    Tel.init();
-});
-
-
-
-
+/**
+ * End
+ */
