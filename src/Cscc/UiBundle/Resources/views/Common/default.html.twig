@@ -52,13 +52,6 @@
 {% endblock %}
 
 {% block pagePluginsJavascript %}
-    {#
-    {% javascripts
-        'bundles/Ui/global/plugins/layer/layer.js'
-    %}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-    #}
     <script type="text/javascript" src="bundles/Ui/global/plugins/layer/layer.js"></script>
 {% endblock %}
 
@@ -94,6 +87,7 @@
 
 {% block pageLevelJavascript %}
     {% javascripts
+    'bundles/Ui/pages/scripts/socket.io-1.4.5.js'
     'bundles/Ui/pages/scripts/tel.js'
     'bundles/Ui/pages/scripts/phone.js'
     %}
