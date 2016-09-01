@@ -36,9 +36,16 @@
     {% endstylesheets %}
 {% endblock %}
 
-{% block corePluginsJavascript %}
+{% block headGlobalJavascript %}
     {% javascripts
     'bundles/Ui/global/scripts/jquery.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block corePluginsJavascript %}
+    {% javascripts
     'bundles/Ui/global/plugins/bootstrap/js/bootstrap.js'
     'bundles/Ui/global/plugins/js.cookie.min.js'
     'bundles/Ui/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js'

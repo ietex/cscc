@@ -196,8 +196,10 @@ var App = function() {
         });
     };
 
+
     // Handles custom checkboxes & radios using jQuery Uniform plugin
     var handleUniform = function() {
+
         if (!$().uniform) {
             return;
         }
@@ -210,7 +212,9 @@ var App = function() {
                 }
             });
         }
+
     };
+
 
     // Handlesmaterial design checkboxes
     var handleMaterialDesign = function() {

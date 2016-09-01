@@ -5,7 +5,8 @@
 
 jQuery(document).ready(function() {
     $('#callOutBtn').on('click',function(){
-        Tel.callOut('013843098138');
+
+        //Tel.callOut('013843098138');
     })
 
 
