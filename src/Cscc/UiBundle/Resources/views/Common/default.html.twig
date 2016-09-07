@@ -39,6 +39,7 @@
 {% block headGlobalJavascript %}
     {% javascripts
     'bundles/Ui/global/scripts/jquery.js'
+    'bundles/Ui/pages/scripts/socket.io-1.4.5.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -94,7 +95,6 @@
 
 {% block pageLevelJavascript %}
     {% javascripts
-    'bundles/Ui/pages/scripts/socket.io-1.4.5.js'
     'bundles/Ui/pages/scripts/tel.js'
     'bundles/Ui/pages/scripts/phone.js'
     %}

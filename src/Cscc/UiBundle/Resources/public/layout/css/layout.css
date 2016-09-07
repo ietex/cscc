@@ -2215,3 +2215,11 @@ Page Loading
   color: #fff;
 }
 
+.page-header .top-toolbar .toolbar-nav > li > span {
+  color: #36c6d3;
+  display: block;
+  line-height: 20px;
+  margin: 0;
+  padding: 17px 10px 9px;
+  position: relative;
+}

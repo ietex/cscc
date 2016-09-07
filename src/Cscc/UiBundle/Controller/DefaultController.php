@@ -5,6 +5,7 @@ namespace Cscc\UiBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Cscc\UserBundle\Document\Product;
 
 class DefaultController extends Controller
 {
@@ -13,7 +14,12 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('UiBundle:Default:index.html.twig',['title'=>'cscc']);
+        $info=$this->get('security.token_storage')->getToken()->getUser();
+        $data=array(
+            'title'=>'icsoc',
+            'AGENT_PHONE'=>$info->getNO(),
+        );
+        return $this->render('UiBundle:Default:index.html.twig',$data);
     }
 
     /**
@@ -21,7 +27,8 @@ class DefaultController extends Controller
      */
     public function defaultAction()
     {
-        return new Response('Default page');
+
+        return new Response('default page');
     }
 
     /**

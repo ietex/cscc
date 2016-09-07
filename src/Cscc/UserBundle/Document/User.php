@@ -1,19 +1,19 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: wangqi
- * Date: 2016/8/22
+ * User: wangQi
+ * All Rights Reserved
  * Time: 14:55
  */
 namespace Cscc\UserBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
 /**
  * @MongoDB\Document(repositoryClass="Cscc\UserBundle\Document\UserRepository")
  */
-class User implements UserInterface, \Serializable
+class User implements AdvancedUserInterface, \Serializable
 {
     /**
      * @MongoDB\Id
@@ -21,14 +21,25 @@ class User implements UserInterface, \Serializable
     protected $id;
 
     /**
-     * @MongoDB\Field(type="string")
+     * @MongoDB\Field(name="username",type="string")
      */
     protected $username;
 
     /**
-     * @MongoDB\Field(type="string")
+     * @MongoDB\Field(name="password",type="string")
      */
     protected $password;
+
+    /**
+     * @MongoDB\Field(name="isActive",type="boolean")
+     */
+    protected $isActive;
+
+
+    public function __construct()
+    {
+
+    }
 
     public function getSalt()
     {
@@ -44,6 +55,7 @@ class User implements UserInterface, \Serializable
 
     public function eraseCredentials()
     {
+
     }
 
     /** @see \Serializable::serialize() */
@@ -53,6 +65,7 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
+            $this->isActive,
             // see section on salt below
             // $this->salt,
         ));
@@ -65,10 +78,35 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
+            $this->isActive,
             // see section on salt below
             // $this->salt
             ) = unserialize($serialized);
     }
+
+    public function isEnabled()
+    {
+        return $this->isActive;
+    }
+
+    public function isAccountNonExpired()
+    {
+        // TODO: Implement isAccountNonExpired() method.
+        return true;
+    }
+
+    public function isAccountNonLocked()
+    {
+        // TODO: Implement isAccountNonLocked() method.
+        return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+        // TODO: Implement isCredentialsNonExpired() method.
+        return true;
+    }
+
 
     /**
      * Set username
@@ -79,7 +117,6 @@ class User implements UserInterface, \Serializable
     public function setUsername($username)
     {
         $this->username = $username;
-
         return $this;
     }
 
@@ -127,4 +164,26 @@ class User implements UserInterface, \Serializable
     }
 
 
+
+    /**
+     * Set isActive
+     *
+     * @param boolean $isActive
+     * @return self
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+        return $this;
+    }
+
+    /**
+     * Get isActive
+     *
+     * @return boolean $isActive
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
 }

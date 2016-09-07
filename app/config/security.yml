@@ -9,12 +9,20 @@ security:
                     admin:
                         password: $2y$12$mxDjM1URQ6sYdn2o2ureUuC.F6xE6sYCrRc/jqqgVbX5BDuI3fSWy #admin
                         roles: 'ROLE_ADMIN'
+
         mysql_provider:
             entity:
                 class: Cscc\UserBundle\Entity\User
                 property: username
         mongodb_provider:
             mongodb: {class: Cscc\UserBundle\Document\User, property: username}
+
+        webservice:
+            id: cscc.webservice_user_provider
+
+        chain_provider:
+            chain:
+                providers: [webservice]
 
     role_hierarchy:
             ROLE_ADMIN:       ROLE_USER
@@ -29,6 +37,9 @@ security:
         Cscc\UserBundle\Document\User:
             algorithm: bcrypt
             cost: 12
+        Cscc\UserBundle\Provider\User\WebserviceUser:
+            algorithm: bcrypt
+            cost: 12
 
 
     firewalls:
@@ -40,7 +51,7 @@ security:
             anonymous: ~
             #http_basic: ~
             form_login:
-                provider: mongodb_provider
+                provider: chain_provider
                 login_path: login
                 check_path: login
 

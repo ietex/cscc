@@ -1,8 +1,8 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: wangqi
- * Date: 2016/8/23
+ * User: wangQi
+ * All Rights Reserved
  * Time: 13:57
  */
 namespace Cscc\UserBundle\Controller;
@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Cscc\UserBundle\Entity\User;
+
+
 /**
  * @Route("/")
  */
